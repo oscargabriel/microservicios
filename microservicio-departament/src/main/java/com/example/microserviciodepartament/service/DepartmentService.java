@@ -4,6 +4,8 @@ import com.example.microserviciodepartament.entity.Departament;
 import com.example.microserviciodepartament.repository.DepartmentRespository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DepartmentService {
 
@@ -20,4 +22,9 @@ public class DepartmentService {
     public Departament getDepartmentById(Long id){
         return departmentRespository.findById(id).get();
     }
+
+    public List<Departament> getDepartmentAll(){
+        return departmentRespository.findAll();
+    }
+
 }
