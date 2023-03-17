@@ -6,6 +6,7 @@ import com.example.microservicioemployee.entity.Employee;
 import com.example.microservicioemployee.repository.EmployeeRespository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -29,8 +30,7 @@ public class EmployeeService {
 
     public ResponseDTO getEmployeeById(Long id){
         ResponseDTO responseDTO = new ResponseDTO();
-        Employee employee = new Employee();
-        employee = employeeRespository.findById(id).get();
+        Employee employee = employeeRespository.findById(id).get();
         ResponseEntity<DepartamentDTO> responseEntity = restTemplate.getForEntity(
                 "http://localhost:8081/api/departaments/"+employee.getId(),
                 DepartamentDTO.class);
