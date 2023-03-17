@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * entidad de empleado para emparejar con la base de datos
+ */
 @Entity
 @Table(name = "employees")
 @Data

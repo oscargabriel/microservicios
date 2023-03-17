@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * referencia para los datos que van a llegar desde el programa de departament
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
