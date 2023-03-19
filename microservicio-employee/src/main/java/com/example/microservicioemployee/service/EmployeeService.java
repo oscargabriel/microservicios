@@ -50,7 +50,7 @@ public class EmployeeService {
         Employee employee = employeeRespository.findById(id).get();
         //se indica la direccion donde esta alojado el servicio de departamento, y el tipo de respuesta
         ResponseEntity<DepartamentDTO> responseEntity = restTemplate.getForEntity(
-                "http://localhost:8081/api/departaments/"+employee.getdepartamentId(),
+                "http://localhost:8081/api/departaments/"+employee.getDepartamentId(),
                 DepartamentDTO.class);
         //se extrae el cuerpo de la solicitud y se almacena
         DepartamentDTO departamentDTO = responseEntity.getBody();

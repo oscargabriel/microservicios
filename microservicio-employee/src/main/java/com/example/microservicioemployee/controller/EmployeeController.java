@@ -4,6 +4,7 @@ import com.example.microservicioemployee.dto.ResponseDTO;
 import com.example.microservicioemployee.entity.Employee;
 import com.example.microservicioemployee.repository.EmployeeRespository;
 import com.example.microservicioemployee.service.EmployeeService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,7 @@ public class EmployeeController {
      * mostrar todos los empleados en el sistema
      * @return List de empleados en la base de datos
      */
+    @Operation(summary = "muestra todos los empleados")
     @GetMapping
     public ResponseEntity<List<Employee>> getEmployeeAll(){
         return ResponseEntity.ok(employeeService.getEmployeeAll());
